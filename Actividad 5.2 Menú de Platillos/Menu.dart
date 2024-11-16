@@ -14,21 +14,21 @@ void main() {
     print('$key ----- ${value}');
   });
 
-  print("Ingresa el platillo a buscar");
-  String? platillo = stdin.readLineSync();
-  if (platillo != null && platillo != "") {
-    searchDishes(menu, platillo);
+  print("\n\nIngresa el dish a buscar");
+  String? dish = stdin.readLineSync();
+  if (dish != null && dish != "") {
+    searchDishes(menu, dish);
   }
 }
 
-void searchDishes(Map<String, double> menu, String platillo) {
+void searchDishes(Map<String, double> menu, String dish) {
   String? foundKey = menu.keys.firstWhere(
-      (key) => key.toLowerCase() == platillo.toLowerCase(),
+      (key) => key.toLowerCase() == dish.toLowerCase(),
       orElse: () => '');
   if (foundKey.isNotEmpty) {
     print(
-        "Platillo encontrado: $foundKey - \$${menu[foundKey]!.toStringAsFixed(2)}");
+        "Platillo ECONTRADO: $foundKey - \$${menu[foundKey]!.toStringAsFixed(2)}");
   } else {
-    print("Platillo no encontrado");
+    print("PLATILLO NO ECONTRADO");
   }
 }
